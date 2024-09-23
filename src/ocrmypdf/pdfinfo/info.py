@@ -10,6 +10,7 @@ import atexit
 import logging
 import re
 import statistics
+import pikepdf
 from collections import defaultdict
 from collections.abc import Callable, Container, Iterable, Iterator, Mapping, Sequence
 from contextlib import contextmanager
