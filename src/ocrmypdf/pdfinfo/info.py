@@ -887,9 +887,9 @@ class PageInfo:
 
         # self._artbox = [float(d) for d in page.artbox.as_list()]
         # self._bleedbox = [float(d) for d in page.bleedbox.as_list()]
-        self._cropbox = [float(d) for d in page.cropbox.as_list()]
-        self._mediabox = [float(d) for d in page.mediabox.as_list()]
-        self._trimbox = [float(d) for d in page.trimbox.as_list()]
+        self._cropbox = [float(str(item)) if isinstance(item, pikepdf.String) else float(item) for item in page.cropbox.as_list()]
+        self._mediabox = [float(str(item)) if isinstance(item, pikepdf.String) else float(item) for item in page.mediabox.as_list()]
+        self._trimbox = [float(str(item)) if isinstance(item, pikepdf.String) else float(item) for item in page.trimbox.as_list()]
 
         check_this_page = pageno in check_pages
 
